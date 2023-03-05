@@ -1,9 +1,16 @@
-
+import Header from "./components/header/Header"
+import  RoutesApp  from "./routes"
 
 function App() {
   
   return (
-    <h1 className='bg-slate-600'>TESTE</h1>
+    <div className="App">
+      
+      <Header/>
+      
+      <RoutesApp/>
+
+    </div>
   )
 }
 
