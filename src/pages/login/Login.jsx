@@ -1,4 +1,31 @@
+import React, {useState} from 'react';
+import {  signInWithEmailAndPassword   } from 'firebase/auth';
+import { auth } from '../../services/firebase';
+import { NavLink, useNavigate } from 'react-router-dom'
+
 function Login(){
+
+    const navigate = useNavigate();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+       
+    const onLogin = (e) => {
+        e.preventDefault();
+        signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            // Signed in
+            const user = userCredential.user;
+            navigate("/home")
+            console.log(user);
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorCode, errorMessage)
+        });
+       
+    }
+
     return(
         <section className="mySection min-h-screen bg-[#090E34]">
             
@@ -8,10 +35,10 @@ function Login(){
 
                 <form action="" className="flex flex-col m-6">
                     <label htmlFor="" className="text-left">Login</label>
-                    <input className="p-1 rounded mb-4" type="email" placeholder="exemplo@lanchofire.com" />
+                    <input id="email-address" name="email" className="p-1 rounded mb-4 text-black" type="email" placeholder="exemplo@lanchofire.com" required onChange={(e)=>setEmail(e.target.value)}/>
                     <label htmlFor="" className="text-left">Senha</label>
-                    <input className="p-1 rounded mb-4" type="password" />
-                    <button type="submit" className="btn-primary mt-4">Entrar</button>
+                    <input id="password" name="password" className="p-1 rounded mb-4 text-black" type="password" required onChange={(e)=>setPassword(e.target.value)}/>
+                    <button type="submit" className="btn-primary mt-4" onClick={onLogin} >Entrar</button>
                 </form>
 
             </div>
