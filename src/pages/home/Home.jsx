@@ -1,30 +1,42 @@
 import React from 'react';
-import {  signOut } from "firebase/auth";
-import {auth} from '../../services/firebase';
-import { useNavigate } from 'react-router-dom';
 
 function Home(){
 
-    const navigate = useNavigate();
- 
-    const handleLogout = () => {               
-        signOut(auth).then(() => {
-        // Sign-out successful.
-            navigate("/");
-            console.log("Signed out successfully")
-        }).catch((error) => {
-        // An error happened.
-        });
-    }
-
     return(
-        <section className="mySection min-h-screen bg-[#090E34]">
+        <section className="mySection min-h-[93vh] bg-[#090E34]">
+
+            <h1 className="text-[1.5em] text-white uppercase tracking-[0.5em]">Cardápio</h1>
             
-            <div className="divCol min-h-[70vh] text-white">
+            <div className="div">
 
-                <h1 className="text-[1.5em] uppercase tracking-widest">Você esta logado!</h1>
+                <div className='blocks'>
 
-                <button onClick={handleLogout}>Sair</button>
+                    <h2 className=' uppercase tracking-[0.1em] text-[#090E34] bg-yellow-400 rounded w-[90%] px-5 py-1'>Entradas</h2>
+
+                    <div className='divRow text-white mt-4'>
+                        <div className=''>
+                            <h3>Nome item</h3>
+                            <p>Igredientes</p>
+                        </div>
+                        <p>R$10,99</p>
+
+                    </div>
+
+                </div>
+
+                <div className='blocks'>
+
+                <h2 className=' uppercase tracking-[0.1em] text-[#090E34] bg-yellow-400 rounded w-[90%] px-5 py-1'>Lanches</h2>
+                    
+
+                </div>
+
+                <div className='blocks'>
+
+                <h2 className=' uppercase tracking-[0.1em] text-[#090E34] bg-yellow-400 rounded w-[90%] px-5 py-1'>Bebidas</h2>
+                    
+
+                </div>
 
             </div>
 
