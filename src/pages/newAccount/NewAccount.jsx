@@ -35,7 +35,7 @@ function NewAccount(){
     return(
         <section className="mySection min-h-screen bg-[#090E34]">
             
-            <div className="divCol min-h-[70vh] text-white">
+            <div className="col min-h-[70vh] text-white">
 
                 <h1 className="text-[1.5em] uppercase tracking-widest">Nova conta</h1>
 
