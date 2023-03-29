@@ -32,15 +32,23 @@ function Dashboard(){
     }
 
     return(
-        <section className="mySection min-h-screen bg-[#090E34]">
+        <section className="mySection min-h-screen bg-[#090E34] text-white">
             
-            <div className="divCol min-h-[70vh] text-white">
+            <div className="col">
 
-                <h1 className="text-[1.5em] uppercase tracking-widest">Você esta logado!</h1>
+            <h1 className='text-[2rem]'>Portal do Administrador</h1>
+            
+            <p>Meus produtos</p>
 
-                <button onClick={handleLogout}>Sair</button>
+                <div className='wrap my-10 mx-auto gap-6'>
+                    <a href="/admin/burguer"><div className='col my-2 btn-products w-[250px] h-[250px]'>Lanches</div></a>
+                    <a href="/admin/sideDish"><div className='col my-2 btn-products w-[250px] h-[250px]'>Acompanhamentos</div></a>
+                    <a href="/admin/drinks"><div className='col my-2 btn-products w-[250px] h-[250px]'>Bebidas</div></a>
+                </div>
 
             </div>
+
+            <button className='text-[1.2rem] hover:text-yellow-400' onClick={handleLogout}>Sair  →</button>
 
         </section>
 

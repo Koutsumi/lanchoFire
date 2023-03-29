@@ -1,4 +1,4 @@
-import { onSnapshot, collection, doc, deleteDoc, serverTimestamp, updateDoc, QuerySnapshot} from "firebase/firestore"
+import { onSnapshot, collection} from "firebase/firestore"
 import { useEffect, useState } from "react"
 import  db  from '../../services/firebase'
 import React from 'react';
@@ -56,16 +56,12 @@ function Home(){
 
     }, [])
 
-    sideDishes.forEach(el => {
-        console.log(el.ingredients)
-    })
-
     return(
-        <section className="mySection min-h-[93vh] bg-[#090E34]">
+        <section className="mySection min-h-[93vh] bg-[#090E34] py-9">
 
-            <h1 className="text-[1.5em] text-white uppercase tracking-[0.5em]">Cardápio</h1>
+            <h1 className="text-[1.5em] mb-4 text-white uppercase tracking-[0.5em]">Cardápio</h1>
             
-            <div className="div">
+            <div className="start">
 
                 <div className='blocks'>
 
@@ -74,7 +70,7 @@ function Home(){
                     {
                         sideDishes?.map(sideDish => {
                             return(
-                                <div className='divRow text-white mt-4'>
+                                <div className='row text-white mt-4'>
                                 <div className=''>
                                     <h3 className='font-bold'>{sideDish.name}</h3>
                                     <p>{sideDish.ingredients}</p>
@@ -94,7 +90,7 @@ function Home(){
                 {
                         burguers?.map(burguer => {
                             return(
-                                <div className='divRow text-white mt-4'>
+                                <div className='row text-white mt-4'>
                                 <div className=''>
                                     <h3 className='font-bold'>{burguer.name}</h3>
                                     <p>{burguer.ingredients}</p>
@@ -114,7 +110,7 @@ function Home(){
                 {
                         drinks?.map(drink => {
                             return(
-                                <div className='divRow text-white mt-4'>
+                                <div className='row text-white mt-4'>
                                 <div className=''>
                                     <h3 className='font-bold'>{drink.name}</h3>
                                     {/* <p>{drink.ingredients}</p> */}
@@ -123,7 +119,7 @@ function Home(){
                                 </div>
                             )
                         })
-                    }
+                }
 
                 </div>
 
