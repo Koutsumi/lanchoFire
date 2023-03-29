@@ -19,3 +19,6 @@
 
 ## Iniciar projeto para desenvolvimento 
     yarn dev
+
+## Link para acessar o projeto
+``` https://lancho-fire.vercel.app/ ```
