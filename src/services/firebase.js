@@ -5,7 +5,7 @@ import { getAuth } from 'firebase/auth'
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: `${import.meta.envVITE_API_KEY}`,
+  apiKey: `${import.meta.env.VITE_API_KEY}`,
   authDomain: `${import.meta.env.VITE_AUTH_DOMAIN}`,
   projectId: 'lanchofire',
   storageBucket: `${import.meta.env.VITE_STORAGE_BUCKET}`,
