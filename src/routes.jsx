@@ -6,6 +6,7 @@ import Dashboard from './pages/dashboard/Dashboard'
 import Burguer from './pages/burguers/burguer';
 import Drink from './pages/drinks/drinks';
 import SideDish from './pages/sideDish/sideDish';
+import Lanche from './pages/lanche/lanche'
 //import Erro from './pages/Erro'
 
 function RoutesApp(){
@@ -22,6 +23,7 @@ function RoutesApp(){
             <Route path="/admin/drinks" element = {<Drink/>}/>
             <Route path="/admin/sidedish" element = {<SideDish/>}/>
 
+            <Route path='/lanche/:id' element={<Lanche/>}/>
             
         </Routes>
         
